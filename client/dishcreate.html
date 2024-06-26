@@ -1,27 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dish Creation</title>
-</head>
-<body>
-    <h1>Create a new dish</h1>
-    <form id="dish-create-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" required>
-        <br>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required>
-        <br>
-        <button type="submit">Create</button>
-    </form>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1 {
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-bottom: 0.5rem;
+        color: #555;
+      }
+      input,
+      textarea,
+      button {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .dishes {
+        margin-top: 2rem;
+      }
+      .dish {
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+      }
+      .dish:last-child {
+        border-bottom: none;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Create Dish</h1>
+      <form id="dishForm">
+        <label for="name">Dish Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required />
+
+        <label for="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          required
+        ></textarea>
+
+        <button type="submit">Create</button>
+      </form>
+
+      <div class="dishes" id="dishesContainer">
+        <!-- Existing dishes will be appended here -->
+      </div>
+    </div>
     <!-- <script defer src="client.js"></script> -->
     <script defer src="dishcreate.js"></script>
-    
-</body>
+  </body>
 </html>

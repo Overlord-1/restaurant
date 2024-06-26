@@ -87,7 +87,7 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify({ username: username, password: password, loginType: loginType }),
             success: function(response) {
-                alert('Login successful!');
+                // alert('Login successful!');           ////// uncommnet this line to see the alert on login
                 if (loginType === 'manager') {
                     window.location.href = 'dishcreate.html';
                 } else {
@@ -96,7 +96,7 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 alert('Login failed: ' + xhr.responseText);
-                // Handle login error (e.g., show error message)
+
             }
         });
     });
