@@ -15,4 +15,7 @@ const dishSchema = new mongoose.Schema({
     }
 });
 
-export default Dish = mongoose.model('Dish', dishSchema);
+export const Dish = mongoose.model('Dish', dishSchema);
+
+export const getAllDishes = () => Dish.find();
+export const createDish = (dish) => Dish.create(dish);

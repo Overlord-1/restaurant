@@ -22,5 +22,9 @@ const customerSchema = new mongoose.Schema({
 });
 
 
-export default Customer = mongoose.model('Customer', customerSchema);
+export const Customer = mongoose.model('Customer', customerSchema);
+
+export const getAllCustomers = () => Customer.find();
+export const getCustomerByEmail = (email) => Customer.findOne({email});
+export const createCustomer = (customer)=>Customer.create(customer);
 
